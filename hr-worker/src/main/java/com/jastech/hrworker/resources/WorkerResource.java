@@ -5,7 +5,6 @@ import com.jastech.hrworker.repositories.WorkerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.core.env.Environment;
 import org.springframework.http.ResponseEntity;
@@ -22,8 +21,8 @@ import java.util.List;
 public class WorkerResource {
     private static Logger logger = LoggerFactory.getLogger(WorkerResource.class);
 
-    @Value("${test.config}")
-    private String testConfig;
+    // @Value("${test.config}")
+    // private String testConfig;
 
     private final Environment env;
     private final WorkerRepository repository;
@@ -36,7 +35,7 @@ public class WorkerResource {
 
     @GetMapping(value = "configs")
     public ResponseEntity<Void> configs() {
-        logger.info("CONFIG = " + testConfig);
+        // logger.info("CONFIG = " + testConfig);
         return ResponseEntity.noContent().build();
     }
 
