@@ -1,6 +1,3 @@
-FROM maven:3-jdk-11
-RUN mvn clean install package
-
 FROM openjdk:11
 VOLUME /tmp
 EXPOSE 8888
